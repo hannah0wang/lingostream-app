@@ -1,7 +1,9 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
     import type { MovieProp } from '$lib/index';
+    import { languageMap } from '$lib/languages';
     export let movieData: MovieProp;
+    export let displayEng: boolean;
 
     let { id, original_language, original_title, overview, poster_path, release_date, title, vote_average, } = movieData;
 
@@ -9,15 +11,18 @@
         return text.toLowerCase().replace(/\s+/g, '-');
     };
 
+    const getFullOriginalLang = (lang: string) => {
+        return Object.keys(languageMap).find(key => languageMap[key] === lang);
+    }
+
     const navigateToMovieDetails = () => {
-        goto(`/${original_language}/${convertToSlug(title)}-${id}`);
+        goto(`/${getFullOriginalLang(original_language)}/${convertToSlug(title)}-${id}`);
     };
 </script>
 
-<a 
-    href={`/${original_language}/${convertToSlug(original_title)}`} 
+<button 
     class="block cursor-pointer" 
-    on:click|preventDefault={() => navigateToMovieDetails()}>
+    on:click={navigateToMovieDetails}>
     <div class="max-w-xs mx-auto rounded relative w-full">
         <div class="relative w-48 h-full">
             <img 
@@ -29,7 +34,7 @@
         <div class="py-4 flex flex-col gap-3">
             <div class="flex justify-between items-center gap-1">
                 <h2 class="text-white text-md line-clamp-1 w-full">
-                    {original_title}
+                    {displayEng? title: original_title}
                 </h2>
                 <div class="py-1 px-2 bg-[#202430] rounded-md">
                     <p class="text-white text-sm font-bold capitalize">
@@ -56,4 +61,4 @@
             </div> -->
         </div>
     </div>
-</a>
+</button>
