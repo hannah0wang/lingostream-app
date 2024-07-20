@@ -2,7 +2,7 @@
 	import { goto } from "$app/navigation";
 	import { page } from "$app/stores";
     import MovieCard from "$lib/components/MovieCard.svelte";
-    import { PaginateItems } from '@jill64/svelte-pagination'
+    import { PaginateItems } from '@jill64/svelte-pagination';
 
     export let data;
 

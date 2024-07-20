@@ -27,6 +27,7 @@
 	
 </script>
 
+
 <div class="navbar max-w-6xl bg-base-100 justify-between mx-auto pt-5" data-theme="sunset">
 	<div class="flex-none">
 	  <DropDownMenu />

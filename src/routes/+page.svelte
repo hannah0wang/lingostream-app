@@ -1,4 +1,6 @@
 <script>
+	import FilmSearch from "$lib/components/FilmSearch.svelte";
+
 </script>
 <div class="flex min-h-screen flex-col" data-theme="sunset">
     <div class="st-dark-theme flex flex-col pt-10 text-white">
@@ -36,5 +38,4 @@
             <p class="max-w-xs px-5 mx-auto">Expand your vocabulary by saving new words to your library.</p>
         </div>
     </div>
-    
 </div>

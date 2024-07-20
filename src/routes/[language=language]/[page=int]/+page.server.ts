@@ -18,7 +18,7 @@ export const load = async ({ params }) => {
     let movies: MovieApiResponse;
 
     try {
-        movies = await request.json() as MovieApiResponse;
+        movies = await request.json();
     } catch (error) {
         console.log(error);
         movies = {

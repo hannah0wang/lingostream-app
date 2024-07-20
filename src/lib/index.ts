@@ -21,3 +21,27 @@ export type MovieApiResponse = {
     total_pages: number;
     total_results: number;
 }
+
+export type OpenSubtitlesResponse = {
+    data: {
+        attributes: {
+            files: {
+                file_id: number;
+            }[];
+        };
+    }[];
+}
+
+export type OpenSubtitlesData = {
+    file_id: number;
+}
+
+export type OpenSubtitlesDownloadData = {
+    "link": string,
+    "file_name": string,
+    "requests": number,
+    "remaining": number,
+    "message": string,
+    "reset_time": string,
+    "reset_time_utc": string,
+}
