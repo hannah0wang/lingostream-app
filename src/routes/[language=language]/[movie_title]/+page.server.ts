@@ -28,7 +28,7 @@ export const load = async ({ params }) => {
         console.error("Error fetching file ID:", error);
     }
 
-    //console.log(fileId);
+    console.log(fileId);
 
     // Request for download link if fileId fetch is successful
     let downloadData: OpenSubtitlesDownloadData | null = null;
@@ -48,14 +48,27 @@ export const load = async ({ params }) => {
         try {
             const response = await fetch('https://api.opensubtitles.com/api/v1/download', downloadOptions);
             downloadData = await response.json();
-            //console.log(downloadData);
+            console.log(downloadData);
         } catch (error) {
             console.error("Error fetching download link:", error);
         }
     }
 
+
+    // get the srt file content
+    let srtContent: string | null = null;
+
+    if (downloadData) {
+        const srtResponse = await fetch(downloadData.link);
+        if (srtResponse.ok) {
+            srtContent = await srtResponse.text();
+        } else {
+            console.error("Error fetching SRT content:", srtResponse.statusText);
+        }
+    }
     return {
         fileId,
         downloadData,
+        srtContent,
     };
 };

@@ -97,7 +97,7 @@
 <dialog class="modal" class:modal-open={isModalOpen}>
 	<div class="modal-box max-w-xl">
 		<form method="dialog" >
-		<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={() => isModalOpen = false}>✕</button>
+		    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={() => isModalOpen = false}>✕</button>
 		</form>
         <div>
             <h1 class="font-bold text-2xl py-3">Welcome Back!</h1>

@@ -17,21 +17,20 @@
     let movieURL = `https://2embed.org/embed/movie/${movieId}`;
 
     console.log(data.downloadData);
-
     
 </script>
 
 
 <div class="min-h-screen bg-black mt-2">
-        <!-- Full-width iframe -->
-        <iframe
-            src={movieURL}
-            width="100%"
-            height="360px"
-            frameborder="0"
-            scrolling="no"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            title="movie"
-            allowfullscreen
-        ></iframe>
+    <!-- Full-width iframe -->
+    <iframe
+        src={movieURL}
+        width="100%"
+        height="360px"
+        frameborder="0"
+        scrolling="no"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        title="movie"
+        allowfullscreen
+    ></iframe>
 </div>
