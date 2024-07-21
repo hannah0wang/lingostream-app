@@ -11,7 +11,7 @@ export const load = async ({ params }) => {
 
     const options = {
         method: 'GET',
-        headers: { 'User-Agent': '', 'Api-Key': OPEN_SUBTITLES_API_KEY }
+        headers: { 'User-Agent': 'lingostream v1.0.0', 'Api-Key': OPEN_SUBTITLES_API_KEY }
     };
 
     // First, get the file ID of the requested movie
@@ -37,7 +37,7 @@ export const load = async ({ params }) => {
         const downloadOptions = {
             method: 'POST',
             headers: {
-                'User-Agent': 'lingostream',
+                'User-Agent': 'lingostream v1.0.0',
                 'Content-Type': 'application/json',
                 Accept: 'application/json',
                 'Api-Key': OPEN_SUBTITLES_API_KEY,
@@ -66,6 +66,9 @@ export const load = async ({ params }) => {
             console.error("Error fetching SRT content:", srtResponse.statusText);
         }
     }
+
+    console.log(srtContent?.slice(0, 500));
+    
     return {
         fileId,
         downloadData,
