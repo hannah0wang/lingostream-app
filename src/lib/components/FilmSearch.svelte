@@ -1,3 +1,4 @@
+<!-- autocomplete search not implemented -->
 <script lang="ts">
     import debounce from 'debounce';
     import { Input } from 'flowbite-svelte';

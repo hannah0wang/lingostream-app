@@ -10,7 +10,7 @@
     let pageNumber = 1;
     let lastPage = (Math.ceil(data.movies.total_results / 20) < 100)? Math.ceil(data.movies.total_results / 20) : 100;
 
-    let activeTab = 2; // Tab 2 is initially active
+    let activeTab = 2; // Tab 2 (original language) is initially active
     let displayEng = false;
 
     // Access the URL parameter

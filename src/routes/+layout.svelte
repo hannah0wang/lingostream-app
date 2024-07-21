@@ -25,6 +25,10 @@
 		}
 	});
 
+	function handleSearch(event: Event) {
+		event.preventDefault();
+		goto(`/search/${encodeURIComponent(searchInput).replace(/%20/g, '+')}`);
+	}
 
 	
 </script>
@@ -47,21 +51,23 @@
 			class="h-8 object-contain"
 		/></a>
 	</div>
-	<div class="flex items-center space-x-2 ml-auto">
-		<label class="input input-bordered w-96 flex items-center gap-2 hover:bg-gray-300 hover:border-gray-300 hover:text-black transition duration-500 ease-in-out">
-		  <svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 16 16"
-			fill="currentColor"
-			class="h-6 w-6 text-gray-400 transition-colors duration-300">
-			<path
-			  fill-rule="evenodd"
-			  d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-			  clip-rule="evenodd" />
-		  </svg>
-		  <input type="text" class="grow" placeholder="Search for a movie" bind:value={searchInput} />
-		</label>
-	</div>
+	<form on:submit={handleSearch}>
+		<div class="flex items-center space-x-2 ml-auto">
+			<label class="input input-bordered w-96 flex items-center gap-2 hover:bg-gray-300 hover:border-gray-300 hover:text-black transition duration-500 ease-in-out">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 16 16"
+				fill="currentColor"
+				class="h-6 w-6 text-gray-400 transition-colors duration-300">
+				<path
+				fill-rule="evenodd"
+				d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+				clip-rule="evenodd" />
+			</svg>
+			<input type="text" class="grow" placeholder="Search for a movie" bind:value={searchInput} />
+			</label>
+		</div>
+	</form>
 
 	<div class="pl-8">
 		<button class="btn btn-primary" on:click={() => isSearchModalOpen = true}>Search by Language</button>
