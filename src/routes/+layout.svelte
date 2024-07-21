@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { goto, invalidateAll } from '$app/navigation';
-	import DropDownMenu from '$lib/components/DropDownMenu.svelte';
 	import LangSearchModal from '$lib/components/LangSearchModal.svelte';
 	import LoginModal from '$lib/components/LoginModal.svelte';
+	import LibraryMenu from '$lib/components/LibraryMenu.svelte';
 	import '../app.css';
 
 	let searchInput = "";
@@ -24,13 +24,15 @@
 			invalidateAll(); // when logged out, page will refresh
 		}
 	});
+
+
 	
 </script>
 
 
 <div class="navbar max-w-6xl bg-base-100 justify-between mx-auto pt-5" data-theme="sunset">
 	<div class="flex-none">
-	  <DropDownMenu />
+	  <LibraryMenu />
 	</div>
 	<div class="flex-1">
 	  <a href="/" class="btn btn-ghost text-2xl font-bold">
