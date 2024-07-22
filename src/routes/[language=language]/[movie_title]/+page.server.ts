@@ -70,8 +70,6 @@ export const load = async ({ params }) => {
     console.log(srtContent?.slice(0, 500));
     
     return {
-        fileId,
-        downloadData,
         srtContent,
     };
 };
