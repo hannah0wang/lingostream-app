@@ -30,13 +30,14 @@
 		goto(`/search/${encodeURIComponent(searchInput).replace(/%20/g, '+')}`);
 	}
 
+
 	
 </script>
 
 
 <div class="navbar max-w-6xl bg-base-100 justify-between mx-auto pt-5" data-theme="sunset">
 	<div class="flex-none">
-	  <LibraryMenu />
+	  <LibraryMenu isLoggedIn={!!session} />
 	</div>
 	<div class="flex-1">
 	  <a href="/" class="btn btn-ghost text-2xl font-bold">

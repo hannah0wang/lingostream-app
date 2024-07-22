@@ -20,7 +20,7 @@
                 <h1 class="font-bold text-2xl mr-10">Search results for "{query.replace(/\+/g, ' ')}"</h1>
             </div>
             <section class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
-                {#each data.movies as movie (movie.id)}
+                {#each data.movies as movie (movie.tmdb_id)}
                     {#if movie.poster_path}
                         <LargeMovieCard movieData={movie} />
                     {/if}

@@ -8,8 +8,8 @@
     let { supabase, session } = data; // destructure these from data object
     $: ({ supabase, session } = data); // reactive statement - listen to changes 
 
-    console.log(supabase);
-    console.log(session);
+    //console.log(supabase);
+    //console.log(session);
     
     export let isModalOpen: boolean;
 

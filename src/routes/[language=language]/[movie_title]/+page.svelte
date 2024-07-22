@@ -16,7 +16,7 @@
     //1001311
     let movieURL = `https://2embed.org/embed/movie/${movieId}`;
 
-    console.log(data.downloadData);
+    console.log(data.srtContent?.slice(0, 100));
     
 </script>
 

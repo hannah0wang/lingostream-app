@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
 	import { page } from "$app/stores";
     import MovieCard from "$lib/components/MovieCard.svelte";
-    import { PaginateItems } from '@jill64/svelte-pagination';
+	import Pagination from "$lib/components/Pagination.svelte";
 
     export let data;
 
@@ -15,14 +14,14 @@
 
     // Access the URL parameter
     $: selectedLang = $page.params.language;
-
+    $: pageNumber = parseInt($page.params.page, 10) || 1; // Fallback to 1 if not valids
 
     const toggleLangTab = (tabNumber: number) => {
         activeTab = tabNumber;
         displayEng = (activeTab === 1);
     };
     
-    console.log(data);
+    //console.log(data);
 
 </script>
 
@@ -46,7 +45,7 @@
                     {/if}
                 {/each}
             </section>
-            <div class="flex justify-center items-center mb-6 mt-[-10px]">
+            <!-- <div class="flex justify-center items-center mb-6 mt-[-10px]">
                 <PaginateItems
                     lastPage={lastPage} 
                     centerSize={3}
@@ -57,12 +56,13 @@
                     lastLabel="❯❯"
                     slug="[page=int]" 
                 />
-            </div>
+            </div> -->
+            <Pagination currentPage={pageNumber} lastPage={lastPage}  />
         </main>
     </div>
 </div>
 
-
+<!-- 
 <style>
     div {
       /* Container styling to center and space pagination */
@@ -83,4 +83,4 @@
       @apply inline-block cursor-pointer rounded-xl bg-gray-700 px-3 py-2.5 text-center text-sm text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95;
       @apply h-10 w-10; /* Ensure uniform button size */
     }
-  </style>
+  </style> -->

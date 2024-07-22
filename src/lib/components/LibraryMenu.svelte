@@ -1,3 +1,9 @@
+<script lang="ts">
+
+    export let isLoggedIn = false;
+</script>
+
+
 <div class="drawer z-10">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content tooltip tooltip-bottom" data-tip="Library">
@@ -19,33 +25,51 @@
     </div>
     <div class="drawer-side">
       <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-      <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 text-lg">
-        <!-- Sidebar content here -->
-        <li><a>
-            <img
-                src="./video-camera.png"
-                alt="movie"
-                class="h-8 pt-2 pl-1 pr-1" />
-            My Movies</a></li>
-        <li><a>
-            <img
-                src="./language-choice.png"
-                alt="languages"
-                class="h-8" />
-            My Languages</a></li>
-        <li><a>
-            <img
-                src="./flash-card.png"
-                alt="flashcard"
-                class="h-5 pl-1 pr-2" />
-            Flashcards</a></li>
-        <li><a>
-            <img
-                src="./save.png"
-                alt="save"
-                class="h-5 pl-1 pr-2" />
-            Saved Vocab</a></li>
-      </ul>
+      {#if isLoggedIn}
+        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 text-lg">
+            <!-- Sidebar content here -->
+            <li><a>
+                <img
+                    src="./video-camera.png"
+                    alt="movie"
+                    class="h-8 pt-2 pl-1 pr-1" />
+                My Movies</a></li>
+            <li><a>
+                <img
+                    src="./language-choice.png"
+                    alt="languages"
+                    class="h-8" />
+                My Languages</a></li>
+            <li><a>
+                <img
+                    src="./flash-card.png"
+                    alt="flashcard"
+                    class="h-5 pl-1 pr-2" />
+                Flashcards</a></li>
+            <li><a>
+                <img
+                    src="./save.png"
+                    alt="save"
+                    class="h-5 pl-1 pr-2" />
+                Saved Vocab</a></li>
+        </ul>
+        {:else}
+        <div role="alert" class="alert bg-base-200 text-base-content min-h-full w-80 p-4 text-xl flex flex-col text-center items-center">
+            <!-- Lock Icon on Top -->
+            <img 
+                src="./lock.png"
+                alt="lock"
+                class="h-10 mb-4 mt-10" />
+                
+            <!-- Alert Message -->
+            <h1 class="text-md ml-10 mr-10 mb-20">You must log in to access the library.</h1>
+            
+            <!-- Button Section -->
+            <button class="btn btn-primary text-xl w-60">Login</button>
+        </div>
+        
+        
+      {/if}
     </div>
   </div>
 
