@@ -1,4 +1,4 @@
-<div class="drawer">
+<div class="drawer z-10">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content tooltip tooltip-bottom" data-tip="Library">
       <!-- Page content here -->

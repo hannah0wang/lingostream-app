@@ -1,8 +1,8 @@
 <script lang="ts">
     import type { MovieProp } from '$lib/index';
-    import { navigateToMovieDetails } from '$lib/utils/navigateToMovie';
+	import { navigateToMovieDetails } from '$lib/utils/navigateToMovie';
     export let movieData: MovieProp;
-    export let displayEng: boolean;
+    //export let displayEng: boolean;
 
     let { id, original_language, original_title, overview, poster_path, release_date, title, vote_average, } = movieData;
 
@@ -15,7 +15,7 @@
 <button 
     class="block cursor-pointer" 
     on:click={handleNavigation}>
-    <div class="max-w-xs mx-auto rounded relative w-full">
+    <div class="mx-auto rounded relative w-full">
         <div class="relative w-48 h-full">
             <img 
                 class="object-cover w-full h-full rounded-md"
@@ -26,7 +26,7 @@
         <div class="py-4 flex flex-col gap-3">
             <div class="flex justify-between items-center gap-1">
                 <h2 class="text-white text-md line-clamp-1 w-full">
-                    {displayEng? title: original_title}
+                    {title}
                 </h2>
                 <div class="py-1 px-2 bg-[#202430] rounded-md">
                     <p class="text-white text-sm font-bold capitalize">

@@ -41,7 +41,9 @@
             </div>
             <section class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
                 {#each data.movies.results as movie (movie.id)}
-                    <MovieCard movieData={movie} {displayEng} />
+                    {#if movie.poster_path}
+                        <MovieCard movieData={movie} {displayEng} />
+                    {/if}
                 {/each}
             </section>
             <div class="flex justify-center items-center mb-6 mt-[-10px]">
