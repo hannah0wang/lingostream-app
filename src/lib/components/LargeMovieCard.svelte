@@ -1,4 +1,7 @@
-<script lang="ts">
+<!-- option to display movies with overview, ratings, etc -->
+<!-- not implemented yet -->
+
+<!-- <script lang="ts">
     import type { MovieProp } from '$lib/index';
 	import { navigateToMovieDetails } from '$lib/utils/navigateToMovie';
     export let movieData: MovieProp;
@@ -34,23 +37,6 @@
                     </p>
                 </div>
             </div>
-            <!-- <div class="flex gap-4 items-center">
-                <div class="flex flex-row gap-2 items-center">
-                    <img
-                        src="/episodes.svg"
-                        alt="episodes"
-                        class="object-contain"
-                    />
-                </div>
-                <div class="flex flex-row gap-2 items-center">
-                    <img
-                        src="/star.svg"
-                        alt="star"
-                        class="object-contain"
-                    />
-                    <p class="text-base font-bold text-[#FFAD49]">{vote_average}</p>
-                </div>
-            </div> -->
         </div>
     </div>
-</button>
+</button> -->

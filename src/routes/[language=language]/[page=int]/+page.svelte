@@ -14,7 +14,7 @@
 
     // Access the URL parameter
     $: selectedLang = $page.params.language;
-    $: pageNumber = parseInt($page.params.page, 10) || 1; // Fallback to 1 if not valids
+    $: pageNumber = parseInt($page.params.page, 10) || 1; // Fallback to 1 if not valid
 
     const toggleLangTab = (tabNumber: number) => {
         activeTab = tabNumber;

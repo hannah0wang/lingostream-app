@@ -45,3 +45,9 @@ export type OpenSubtitlesDownloadData = {
     "reset_time": string,
     "reset_time_utc": string,
 }
+
+export type Subtitle = {
+    startTime: number;
+    endTime: number;
+    text: string;
+}
