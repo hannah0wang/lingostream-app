@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import FilmSearch from "$lib/components/FilmSearch.svelte";
 
 </script>
