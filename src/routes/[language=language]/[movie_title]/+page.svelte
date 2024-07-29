@@ -27,7 +27,12 @@
     //console.log(movieId);
     //console.log($page.url.pathname);
     //1001311
-    let movieURL = `https://2embed.org/embed/movie/${movieId}`;
+    //let movieURL = `https://2embed.org/embed/movie/${movieId}`;
+
+	//Detailed representation of the API endpoints for Vidsrc includes comprehensive information regarding the available methods, request formats, required parameters and optional parameters.
+	//Use one of these domains for embed urls:
+	//vidsrc.in , vidsrc.pm , vidsrc.xyz , vidsrc.net
+	let movieURL = `https://vidsrc.xyz/embed/movie?tmdb=${movieId}&ds_lang=${languageMap[selectedLang]}`
 
 
     //console.log(subtitles.slice(0, 100));
