@@ -1,8 +1,11 @@
 <script lang="ts">
+	import LoginModal from "./LoginModal.svelte";
 
+    export let data;
     export let isLoggedIn = false;
-</script>
+    let isLoginModalOpen = false;
 
+</script>
 
 <div class="drawer z-10">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
@@ -65,13 +68,14 @@
             <h1 class="text-md ml-10 mr-10 mb-20">You must log in to access the library.</h1>
             
             <!-- Button Section -->
-            <button class="btn btn-primary text-xl w-60">Login</button>
+             
+            <button class="btn btn-primary text-xl w-60" on:click={() => isLoginModalOpen = true}>Login</button>
         </div>
-        
         
       {/if}
     </div>
   </div>
+  <LoginModal bind:isModalOpen={isLoginModalOpen} {data} />
 
 
 

@@ -1,7 +1,6 @@
 <script lang="ts">
     import { Auth } from '@supabase/auth-ui-svelte';
     import { ThemeSupa, type SocialLayout, type ViewType } from '@supabase/auth-ui-shared';
-    import { goto } from '$app/navigation';
 
     export let data;
 
