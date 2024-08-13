@@ -45,42 +45,7 @@
                     {/if}
                 {/each}
             </section>
-            <!-- <div class="flex justify-center items-center mb-6 mt-[-10px]">
-                <PaginateItems
-                    lastPage={lastPage} 
-                    centerSize={3}
-                    sideSize={2} 
-                    previousLabel="❮"
-                    nextLabel="❯"
-                    firstLabel="❮❮"
-                    lastLabel="❯❯"
-                    slug="[page=int]" 
-                />
-            </div> -->
             <Pagination currentPage={pageNumber} lastPage={lastPage}  />
         </main>
     </div>
 </div>
-
-<!-- 
-<style>
-    div {
-      /* Container styling to center and space pagination */
-    }
-    div :global(.paginate-page-link) {
-      @apply mx-1 px-2 py-2 cursor-pointer rounded-xl text-gray-700 bg-transparent text-center shadow-sm transition duration-200 ease-in-out hover:bg-gray-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95;
-      @apply h-10 w-10; /* Ensure uniform button size */
-    }
-    div :global(.paginate-navigation) {
-      @apply inline-block cursor-pointer rounded-xl bg-transparent px-3 py-2.5 text-center text-sm text-gray-700 transition duration-200 ease-in-out hover:bg-gray-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95;
-      @apply h-10 w-10; /* Ensure uniform button size */
-    }
-    div :global(.paginate-rest-indicator) {
-      @apply mx-1 px-3 py-2 text-gray-500;
-      @apply h-10 w-10; /* Ensure uniform button size */
-    }
-    div :global(.paginate-current-page) {
-      @apply inline-block cursor-pointer rounded-xl bg-gray-700 px-3 py-2.5 text-center text-sm text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95;
-      @apply h-10 w-10; /* Ensure uniform button size */
-    }
-  </style> -->

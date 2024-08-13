@@ -68,7 +68,7 @@
             {#if language.includes(searchInput.toLocaleLowerCase())}
                 <button
                 class={`card h-12 p-1 m-1 justify-center items-center mb-4
-                    ${selectedLang === language ? 'bg-purple-600 text-white' : 'bg-gray-700 hover:bg-gray-600 text-white'}`}
+                    ${selectedLang === language ? 'bg-accent text-white' : 'bg-gray-700 hover:bg-gray-600 text-white'}`}
             on:click={() => toggleLang(language)}
                 >
                     <div class="text-center">
