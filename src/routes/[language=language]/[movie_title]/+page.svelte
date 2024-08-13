@@ -5,6 +5,7 @@
 	import { derived } from "svelte/store";
     import { parseSRT } from "$lib/utils/srtToSubtitle.js";
 	import MovieActionBar from "$lib/components/MovieActionBar.svelte";
+	import SubtitleContainer from "$lib/components/SubtitleContainer.svelte";
 
     export let data;
 
@@ -57,4 +58,5 @@
         allowfullscreen
     ></iframe>
 	<MovieActionBar {movieId} {data} lang={selectedLang} />
+    <SubtitleContainer {movieId} />
 </div>

@@ -15,20 +15,20 @@
 
 	
 
-	page.subscribe(async () => {
-		const {data: userLibData, error: userLibError } = await supabase.from("user_library").select("movie_ids").eq("user_id", session?.user?.id);
-		if (userLibData?.length == 0) {
-			const { data, error } = await supabase
-				.from("user_library")
-				.insert({ user_id: session?.user?.id, movie_id: userMovies });
+	// page.subscribe(async () => {
+	// 	const {data: userLibData, error: userLibError } = await supabase.from("user_library").select("movie_ids").eq("user_id", session?.user?.id);
+	// 	if (userLibData?.length == 0) {
+	// 		const { data, error } = await supabase
+	// 			.from("user_library")
+	// 			.insert({ user_id: session?.user?.id, movie_id: userMovies });
 
-		} else {
-			userMovies = userLibData[0];
-		}
+	// 	} else {
+	// 		userMovies = userLibData[0];
+	// 	}
 
-		console.log(userLibData[0]);
+	// 	console.log(userLibData[0]);
 		
-	});
+	// });
 
 	// Function to toggle save status of a movie
 	async function toggleSave() {
@@ -72,58 +72,6 @@
 		// console.log(movieId);
 	}
 
-
-
-	// 	// Load the user's saved movies from the database
-	// 	async function loadUserMovies() {
-	// 	if (session?.user) {
-	// 		const { data: userLibData, error } = await supabase
-	// 			.from('user_library')
-	// 			.select('movie_ids')
-	// 			.eq('user_id', session.user.id)
-	// 			.single();
-
-	// 		if (error) {
-	// 			console.error('Error loading user movies:', error);
-    //             userMovies = [];
-	// 		} else if (userLibData && userLibData.length > 0) {
-	// 			// If there's data, get the movie_ids from the first row
-	// 			userMovies = userLibData[0].movie_ids || [];
-	// 		} else {
-	// 			// If there's no data, initialize an empty array
-	// 			userMovies = [];
-	// 		}
-	// 	}
-	// }
-
-	// // Initialize the user's saved movies when the component loads
-	// loadUserMovies();
-
-	// async function toggleSave() {
-	// 	if (!session?.user) {
-	// 		alert('You need to be logged in to save movies.');
-	// 		return;
-	// 	}
-
-	// 	const index = userMovies.indexOf(movieId);
-	// 	if (index === -1) {
-	// 		// Add the movie ID if it's not already saved
-	// 		userMovies = [...userMovies, movieId];
-	// 	} else {
-	// 		// Remove the movie ID if it's already saved
-	// 		userMovies = userMovies.filter((id) => id !== movieId);
-	// 	}
-
-	// 	const { data: updatedLib, error: updateError } = await supabase
-	// 		.from('user_library')
-	// 		.upsert({ user_id: session.user.id, movie_ids: userMovies }, { onConflict: 'user_id' });
-
-	// 	if (updateError) {
-	// 		console.error('Error updating user movie:', updateError);
-	// 	} else {
-	// 		console.log('User movies updated successfully:', updatedLib);
-	// 	}
-	// }
 </script>
 
 <ul
@@ -192,12 +140,43 @@
 			</svg>
 		</a>
 	</li>
+	<li class="transition-opacity duration-300">
+		<a id="help-popover" class="tooltip flex items-center" data-tip="Help">
+		  <svg
+			xmlns="http://www.w3.org/2000/svg"
+			class="h-4 w-4 text-gray-700 hover:text-gray-300 mt-0.5"
+			viewBox="0 0 512 512"
+			fill="currentColor"
+		  >
+			<g>
+			  <path
+				fill="currentColor"
+				d="M 238.5,-0.5 C 249.833,-0.5 261.167,-0.5 272.5,-0.5C 337.959,10.115 380.793,47.115 401,110.5C 415.038,174.388 397.205,227.222 347.5,269C 333.474,280.013 317.807,287.846 300.5,292.5C 300.667,312.836 300.5,333.169 300,353.5C 293.697,376.063 278.864,387.729 255.5,388.5C 227.616,386.449 212.449,371.449 210,343.5C 209.333,313.833 209.333,284.167 210,254.5C 211.235,231.189 223.069,216.356 245.5,210C 279.209,211.086 301.709,195.92 313,164.5C 318.518,128.693 304.352,104.527 270.5,92C 239.017,86.1596 215.85,97.3262 201,125.5C 197.297,136.511 195.297,147.845 195,159.5C 190.772,176.062 180.605,187.229 164.5,193C 134.981,198.998 115.481,187.831 106,159.5C 103.51,96.2958 129.343,48.7958 183.5,17C 200.925,7.90175 219.258,2.06841 238.5,-0.5 Z"
+				style="opacity:0.986"
+			  />
+			</g>
+			<g>
+			  <path
+				fill="currentColor"
+				d="M 265.5,511.5 C 258.833,511.5 252.167,511.5 245.5,511.5C 219.354,502.573 207.854,484.24 211,456.5C 220.481,428.169 239.981,417.002 269.5,423C 293.49,432.8 303.656,450.633 300,476.5C 294.984,494.682 283.484,506.348 265.5,511.5 Z"
+				style="opacity:0.976"
+			  />
+			</g>
+		  </svg>
+		</a>
+	  </li>
 </ul>
 
 <Popover
 	class="w-64 text-sm font-light "
-	title="Popover title"
+	title="Movie title"
 	triggeredBy="#details-popover"
 	placement="bottom"
 	trigger="click">And here's some amazing content. It's very engaging. Right?</Popover
+>
+<Popover
+	class="w-64 text-sm font-light"
+	triggeredBy="#help-popover"
+	placement="bottom"
+	trigger="click">Double-click any word to view its translation, or highlight text to see the translation for the entire phrase.</Popover
 >
