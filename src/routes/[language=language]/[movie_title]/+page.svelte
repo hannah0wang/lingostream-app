@@ -58,5 +58,5 @@
         allowfullscreen
     ></iframe>
 	<MovieActionBar {movieId} {data} lang={selectedLang} />
-    <SubtitleContainer {movieId} />
+    <SubtitleContainer {movieId} lang={languageMap[selectedLang]} />
 </div>

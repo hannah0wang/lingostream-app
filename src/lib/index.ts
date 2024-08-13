@@ -51,3 +51,8 @@ export type Subtitle = {
     endTime: number;
     text: string;
 }
+
+export type TranslationProp = {
+    "alternatives": string[],
+    "translatedText": string,
+}

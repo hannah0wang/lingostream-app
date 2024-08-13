@@ -168,14 +168,14 @@
 </ul>
 
 <Popover
-	class="w-64 text-sm font-light "
+	class="w-64 text-sm font-light p-3"
 	title="Movie title"
 	triggeredBy="#details-popover"
 	placement="bottom"
 	trigger="click">And here's some amazing content. It's very engaging. Right?</Popover
 >
 <Popover
-	class="w-64 text-sm font-light"
+	class="w-64 text-sm font-light p-3"
 	triggeredBy="#help-popover"
 	placement="bottom"
 	trigger="click">Double-click any word to view its translation, or highlight text to see the translation for the entire phrase.</Popover
