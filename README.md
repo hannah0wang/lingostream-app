@@ -1,38 +1,14 @@
-# create-svelte
+#LingoStream
+A free language-learning movie app with interactive subtitles and translations, built with Svelte for speedy and smooth, immersive learning.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## 🚀 Features
+- Interactive Subtitles: Click on any word in the subtitles to get instant translations and definitions.
+- Add Vocabulary: Save words and phrases to review later, helping you expand your vocabulary effortlessly.
+- Extensive Language Support: Movies and subtitles for 10+ different languages.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Tech Stack
+- Built with Sveltekit for a fast, and responsive UI with server-side rendering and routing.
+- Supabase and PostgreSQL for user authentication and storing user/movie data.
+- DaisyUI for speedy development.
+- TMDB API for movie information and metadata.
+- Docker to host the [LibreTranslate](https://libretranslate.com/) API.
