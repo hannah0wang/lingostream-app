@@ -1,4 +1,4 @@
-#LingoStream
+# LingoStream
 A free language-learning movie app with interactive subtitles and translations, built with Svelte for speedy and smooth, immersive learning.
 
 ## 🚀 Features
